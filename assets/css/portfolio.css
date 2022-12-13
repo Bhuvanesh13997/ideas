@@ -1,0 +1,293 @@
+/*Google Fonts --- Fire Sans , Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*Basic Settings*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Fira Sans','Poppins',sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    height: 100vh;
+    background-color: #1C1C1C;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 0;
+}
+.hidden {
+    display: none;
+}
+
+.wrapper{
+    width: 100%;
+    height: unset;
+    background-color: #1C1C1C;
+    color: #ffffff;
+}
+
+/*navigation_panel*/
+
+.navigation_panel{
+    
+}
+
+
+
+/*Tabs*/
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    background-color: unset !important;
+    color: #D01069 !important;
+    font-size: 20px;
+    font-weight: 600;
+    border: 0;
+}
+
+.nav-tabs .nav-link{
+    font-size: 20px;
+    border: 0 !important;
+    color: #ffffff;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+    border-color: unset!important;
+}
+
+
+
+
+
+
+
+/* *****  GALLERIES ***** */
+
+.gallery-wrapper {
+    padding: 50px 10px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+  }
+  
+  /* Another way to do the same without declaring in the classes - remove h-x w-x from classes */
+  /* .gallery-wrapper {
+    padding: 2rem 10rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5, 300px);
+    grid-auto-rows: 200px;
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+  }
+   */
+  
+  .gallery-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    filter: drop-shadow(2px 2px 3px #333);
+  }
+  
+  .gallery-item .image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .gallery-item .image img {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition: all 400ms ease-in;
+    transform: scale(1);
+  }
+  
+  .gallery-item .image img:hover {
+    transform: scale(1.1);
+  }
+  
+  .w-1{
+    grid-column: span 1;
+  }
+  .w-2{
+    grid-column: span 2;
+  }
+  .w-3{
+    grid-column: span 3;
+  }
+  .w-4{
+    grid-column: span 4;
+  }
+  .w-5{
+    grid-column: span 5;
+  }
+  .w-6{
+    grid-column: span 6;
+  }
+  
+  .h-1{
+    grid-row: span 1;
+  }
+  .h-2{
+    grid-row: span 2;
+  }
+  .h-3{
+    grid-row: span 3;
+  }
+  .h-4{
+    grid-row: span 4;
+  }
+  .h-5{
+    grid-row: span 5;
+  }
+  .h-6{
+    grid-row: span 6;
+  }
+  
+  /* ***** LIGHTBOX EFFECT ***** */
+  
+  #lightbox {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .92);
+    display: none;
+  }
+  
+  #lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    padding: 4px;
+    /* border-radius: 1%; */
+    /* background-color: white; */
+    border: 0.2px solid silver;
+  }
+  
+  /* Generic Styles */
+  :root {
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+
+  
+  @media only screen and (max-width: 800px) {
+    .gallery-wrapper {
+      grid-template-columns: repeat(2, 2fr);
+      grid-template-rows: 1fr;
+      grid-gap: 2;
+      grid-auto-flow: dense;
+    }  
+    /* .gallery-container:nth-child(3n+2) {
+      grid-column: 1 / span 2;
+      grid-row-end: span 2;
+    }
+    
+    .gallery-container:nth-child(4n+3) {
+      grid-column: 2 / span 1;
+      grid-row-end: span 2;
+    } */
+
+    .gallery-item .image img {
+        height: 350px;
+      }
+    
+  /*  reseting the css for the class within the divs to show a different way to achieve grid control using the nth childs*/
+    .w-1,
+    .w-2,
+    .w-3,
+    .w-4,
+    .w-5,.w-6 {
+    grid-column: span 1;
+  }
+  
+  .h-1,
+  .h-2,
+  .h-3,
+  .h-4,
+  .h-5 {
+    grid-row: span 1;
+  }
+    
+  }
+  
+  @media only screen and (max-width: 576px) {
+  /* An example to use combined with flex but could also be grids with different repetition of columns  */
+    .gallery-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: wrap;
+      gap: 2.5rem;
+      /* margin: 5rem; */
+    }  
+  }
+
+
+
+
+
+
+.BackToHome{
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+#_scroll {
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#3498db;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+#_scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+#_scroll:hover {
+    background-color:#e74c3c;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}
