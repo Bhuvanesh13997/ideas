@@ -126,6 +126,7 @@ h1,h2,h3,h4,h5,h6,p{
 .Banner_section{
     background-color: #000000;
     height: 100vh;
+    overflow: hidden; /* to avoid stars overflow to other sections*/
     display: flex;
     align-items: center;
 }
